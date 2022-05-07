@@ -1,3 +1,5 @@
+### Basic Select Query.
+
 ```sql
 show databases;
 ```
