@@ -75,3 +75,8 @@ select YEAR(hire_date) from employees where department_id = 6;
 select * from employees where salary > (select AVG(salary) from employees);
 
 select first_name, last_name from employees where salary > (select AVG(salary) from employees);
+
+select distinct city from employees where city REGEXP '^[AEIOU]';
+
+select distinct city from employees where NOT city REGEXP '^[AEIOU]';
+
