@@ -1,3 +1,13 @@
+### SQL Join
+
+#### Inner Join
+#### Left Join
+#### Right Join
+#### Full Join
+#### Natural Join
+#### Cross Join
+
+
 ```sql
 show databases;
 ```
@@ -36,7 +46,6 @@ insert into student values
 select * from student;
 ```
 
-
 ```sql
 create table department(
 student_id int auto_increment,
@@ -57,20 +66,8 @@ insert into department values
 select * from department;
 ```
 
-
-### SQL Join
-
-#### Inner Join
-#### Left Join
-#### Right Join
-#### Full Join
-#### Natural Join
-#### Cross Join
-
-```sql
-/* Inner Join */
-#  whichever data are common on both table that will come
-```
+# Inner Join 
+####  whichever data are common on both table that will come
 
 ```sql
 select student.first_name, student.last_name, student.age, department.department_name
@@ -79,10 +76,8 @@ inner join department
 on student.student_id = department.student_id;
 ```
 
-```sql
-/* Left Join */
-# all data from left side table
- ```
+# Left Join
+#### all data from left side table
 
 ```sql
 select student.first_name, student.last_name, student.age, department.department_name
@@ -91,10 +86,8 @@ left join department
 on student.student_id = department.student_id;
 ```
 
-```sql
-/* Right Join */
-# all data from right side table
-```
+# Right Join
+#### all data from right side table
 
 ```sql
 select student.first_name, student.last_name, student.age, department.department_name
@@ -117,15 +110,15 @@ right join department
 on student.student_id = department.student_id;
 ```
 
-/* Cross Join */
-# all the possible combination
+### Cross Join
+#### all the possible combination
 ```sql
 select student.first_name, student.last_name, student.age, department.department_name
 from student 
 cross join department;
 ```
 
-/* Natural Join */
+### Natural Join
 ```sql
 select student.first_name, student.last_name, student.age, department.department_name
 from student 
