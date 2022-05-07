@@ -1,11 +1,8 @@
 ### SQL Join
 
-#### Inner Join
-#### Left Join
-#### Right Join
-#### Full Join
-#### Natural Join
-#### Cross Join
+##### Inner Join   Full Join
+##### Left Join    Natural Join
+##### Right Join   Cross Join
 
 
 ```sql
@@ -96,8 +93,8 @@ right join department
 on student.student_id = department.student_id;
 ```
 
+# Full Join 
 
-/* Full Join */
 ```sql
 select student.first_name, student.last_name, student.age, department.department_name
 from student 
