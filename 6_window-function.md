@@ -23,6 +23,14 @@
 - LAG
 - LEAD
 
+- FRAME CLAUSE
+- FIRST_VALUE
+- LAST_VALUE
+- NTH_VALUE
+- NTILE
+- PERCENT_RANK
+- CUME_DIST
+
 
 ```sql
 select dept_name, max(salary) as max_salary
