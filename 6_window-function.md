@@ -17,11 +17,11 @@
 
 #### They are : Cumulative distribution, row number, dense rank, rank, ntile, lag, lead, firstvalue, last value etc. We will see each one with a example and we will get more understanding.
 
-- [ROW_NUMBER]
-- [RANK]
-- [DENSE_RANK]
-- [LAG]
-- [LEAD]
+- ROW_NUMBER
+- RANK
+- DENSE_RANK
+- LAG
+- LEAD
 
 
 ```sql
@@ -33,7 +33,7 @@ group by dept_name;
 
 ```sql
 select e.*,
-max(salary) over(partition by dept_name) as max_salary
+    max(salary) over(partition by dept_name) as max_salary
 from employee e;
 ```
 
@@ -42,14 +42,14 @@ from employee e;
 
 ```sql
 select e.*,
-row_number() over() as rn
+    row_number() over() as rn
 from employee e; 
 ```
 
 
 ```sql
 select e.*,
-row_number() over(partition by dept_name ) as rn
+    row_number() over(partition by dept_name ) as rn
 from employee e; 
 ```
 
@@ -86,15 +86,15 @@ where x.rnk < 4;
 
 ```sql
 select e.*,
-dense_rank() over(partition by dept_name order by salary desc) as dense_rnk
+    dense_rank() over(partition by dept_name order by salary desc) as dense_rnk
 from employee e;
 ```
 
 
 ```sql
 select e.*,
-rank() over(partition by dept_name order by salary desc) as rnk,
-dense_rank() over(partition by dept_name order by salary desc) as dense_rnk
+    rank() over(partition by dept_name order by salary desc) as rnk,
+    dense_rank() over(partition by dept_name order by salary desc) as dense_rnk
 from employee e;
 ```
 
@@ -106,7 +106,7 @@ from employee e;
 
 ```sql
 select e.*,
-lag(salary) over (partition by dept_name order by emp_id) as prev_emp_salary
+    lag(salary) over (partition by dept_name order by emp_id) as prev_emp_salary
 from employee e;
 ```
 
@@ -117,7 +117,7 @@ from employee e;
 
 ```sql
 select e.*,
-lead(salary) over (partition by dept_name order by emp_id) as next_emp_salary
+    lead(salary) over (partition by dept_name order by emp_id) as next_emp_salary
 from employee e;
 ```
 
@@ -126,9 +126,9 @@ from employee e;
 select e.*,
 lead(salary) over (partition by dept_name order by emp_id) as prev_emp_salary
 case  
-when e.salary >lag(salary) over(partition by dept_name order by emp_id) then 'Higher than previous employee'
-when e.salary < lag(salary) over(partition by dept_name order by emp_id) then 'Lower than previous employee'
-when e.salary = lag(salary) over(partition by dept_name order by emp_id) then 'Same as than previous employee'
+    when e.salary >lag(salary) over(partition by dept_name order by emp_id) then 'Higher than previous employee'
+    when e.salary < lag(salary) over(partition by dept_name order by emp_id) then 'Lower than previous employee'
+    when e.salary = lag(salary) over(partition by dept_name order by emp_id) then 'Same as than previous employee'
 end sal_range
 from employee;
 ```
