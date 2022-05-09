@@ -1,21 +1,21 @@
 ### Window function
 
-#### a window function or analytic function is a function which uses values from one or multiple rows to return a value for each row. 
+a window function or analytic function is a function which uses values from one or multiple rows to return a value for each row. 
 
-#### Window functions have an OVER clause; any function without an OVER clause is not a window function, but rather an aggregate or single-row function.
+Window functions have an OVER clause; any function without an OVER clause is not a window function, but rather an aggregate or single-row function.
 
 ### Types of Window functions :
 #### Analytical
 #### Aggregate
 
 
-#### Aggregate functions : An aggregate function computes the aggregate values of a particular row and returns the value. For example : sum() returns sum of a row. This returns a single result.
+Aggregate functions : An aggregate function computes the aggregate values of a particular row and returns the value. For example : sum() returns sum of a row. This returns a single result.
 
-#### They are : sum, avg, min, max etc. This is same as we studied in python and in school.
+They are : sum, avg, min, max etc. This is same as we studied in python and in school.
 
-#### Analytical functions : An analytic function computes values over a group of rows and returns a single result for each row. This is different from an aggregate function, which returns a single result for an entire group of rows.
+Analytical functions : An analytic function computes values over a group of rows and returns a single result for each row. This is different from an aggregate function, which returns a single result for an entire group of rows.
 
-#### They are : Cumulative distribution, row number, dense rank, rank, ntile, lag, lead, firstvalue, last value etc. We will see each one with a example and we will get more understanding.
+They are : Cumulative distribution, row number, dense rank, rank, ntile, lag, lead, firstvalue, last value etc. We will see each one with a example and we will get more understanding.
 
 - ROW_NUMBER
 - RANK
@@ -73,7 +73,8 @@ where emp.rn < 3;
 ```
 
 ### RANK
-##### rank will skip row value for every duplicate that found previously
+
+rank will skip row value for every duplicate that found previously
 
 #### fetch the top 3 employees in each department earning the max salary
 
@@ -89,7 +90,7 @@ where x.rnk < 4;
 
 ### DENSE_RANK
 
-#### dense_rank will not skip value
+dense_rank will not skip value
 
 
 ```sql
@@ -111,6 +112,8 @@ from employee e;
 #### fetch a query to display if the salary of an employee is higher, lower or
 #### equal to the previous employee
 
+lag(salary, 2, 0)
+
 
 ```sql
 select e.*,
@@ -119,8 +122,6 @@ from employee e;
 ```
 
 ### LEAD
-
-#### lead(salary, 2, 0)
 
 
 ```sql
